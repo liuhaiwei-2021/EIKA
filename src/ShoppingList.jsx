@@ -11,7 +11,11 @@ const ShoppingList = () => {
                 <input type="button" value="Price"/></p>    
             
             <ShoppingTable />
-
+            <button className="btn-add">Add a new item</button>
+            <div>
+                <input className="view-completed-items" type="button" value="View completed items"/>
+            </div>
+            
         </div>
     )
 }

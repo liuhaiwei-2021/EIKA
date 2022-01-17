@@ -12,7 +12,7 @@ html, body {
 /* content */
 .content {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-columns: 1fr 4fr 1fr; 
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -47,18 +47,46 @@ html, body {
       border-radius: 30px;
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-/* ShopingList componenr */
+/* ShopingList componenent */
 .shopping-list{
-    display: grid;
+    display: flexbox;
     text-align: center;
     justify-content: center;
-    
-    
+    align-items: center;   
 }
 .shopping-list input{
     border-style: none;
-    background-color: #fff;
     text-decoration: underline;
-    text-decoration-color: green;
-
+    color: gray;
+    -webkit-tap-highlight-color: transparent;
+}
+.shopping-list input:hover{
+    color: black;
+}
+.shopping-list .btn-add{
+    display: inline-block;
+    background-color: rgb(36, 87, 158);
+    margin-top: 20px;
+    padding: 14px 60px;
+    color:#fff;
+    font-size: large;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.shopping-list .view-completed-items{
+    display: inline-block;
+    margin-top: 20px;
+}
+/* shopping table component */
+.shopping-table{
+    display: flexbox;
+    width: 100%;
+    border: none;
+    line-height: 100px;
+    justify-content: space-around;
+}
+.shopping-table .product-img{
+   width: 100px;
+   height: auto;
 }
