@@ -8,6 +8,7 @@
 }
 
 * {
+    font-family: NotoSans-Regular;
     font-weight: 600;
     box-sizing: border-box;
 }
@@ -29,6 +30,7 @@ html, body {
     height: 60px;
     margin-top: 10px;
     grid-column: 2/3;
+    
 }
 .header ul{
     list-style-type: none;
@@ -54,6 +56,42 @@ html, body {
       border: none;
       border-radius: 30px;
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/* AddItem component */
+.add-item{
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 40px;  
+}
+form.add-item-form input[type="text"]{
+    display: block;
+    margin: 40px;
+    padding: 14px 14px;
+    height: 40px;
+    width: 100%;
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;  
+    font-size: 20px;   
+}
+form.add-item-form input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+form.add-item-form input[type="submit"]{
+    display: inline-block;
+    background-color: rgb(22, 66, 128);
+    margin-top: 20px;
+    padding: 14px 60px;
+    color:#fff;
+    font-size: large;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);   
 }
 /* ShopingList componenent */
 .shopping-list{

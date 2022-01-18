@@ -1,7 +1,8 @@
 import React from 'react'
 import ShoppingTable from './ShoppingTable'
 
-const ShoppingList = ({list}) => {
+const ShoppingList = ({list,addItem}) => {
+
     return (
         <div className="shopping-list">
             <h1>Shopping List</h1> 

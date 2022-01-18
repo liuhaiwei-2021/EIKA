@@ -1,6 +1,9 @@
 import React from 'react'
 
 function Welcome() {
+ const handleClick =()=>{
+    window.location.replace("http://localhost:3000/add")
+ }
     return (
         <div className="welcome">
             <img alt="sketch" src="/assets/images/sketch.png" />
@@ -16,7 +19,7 @@ function Welcome() {
                 popup will ask you the name and the price of the
                 item you want to add. You can also and an image
                 after the item is added by touching the camera icon</p>
-            <button className="btn-add">Add a new item</button>
+            <button className="btn-add" onClick={() => handleClick()}>Add a new item</button>
 
         </div>
     )
