@@ -3,7 +3,7 @@ import React from 'react'
 function Welcome() {
     return (
         <div className="welcome">
-            <img alt="sketch" src="/images/sketch.png" />
+            <img alt="sketch" src="/assets/images/sketch.png" />
 
             <h1>EIKA'S shopping list</h1>
 

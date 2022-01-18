@@ -1,13 +1,13 @@
 import React from 'react'
 
-const ShoppingTable = ({products}) => {
+const ShoppingTable = ({list}) => {
     return (
         <div>
             <table className="shopping-table">               
                 <tbody>
                                      
-                        { 
-                            products.map((item)=>(
+                        { list &&
+                            list.map((item)=>(
                             <tr key={item.id} > 
                                 <td> 
                                     <input className="product-desc" type="checkbox"  name={item.name}/>

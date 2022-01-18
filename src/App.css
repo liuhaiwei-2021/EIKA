@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'NotoSans-Bold'; 
+    src: url('../public/assets/fonts/Noto_Sans/NotoSans-Bold.ttf')
+}
+@font-face {
+    font-family: 'NotoSans-Regular'; 
+    src: url('../public/assets/fonts/Noto_Sans/NotoSans-Regular.ttf')
+}
+
 * {
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-weight: 600;
     box-sizing: border-box;
 }

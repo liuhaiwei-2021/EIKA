@@ -1,7 +1,7 @@
 import React from 'react'
 import ShoppingTable from './ShoppingTable'
 
-const ShoppingList = ({products}) => {
+const ShoppingList = ({list}) => {
     return (
         <div className="shopping-list">
             <h1>Shopping List</h1> 
@@ -10,7 +10,7 @@ const ShoppingList = ({products}) => {
                 <input type="button" value="Name"/>
                 <input type="button" value="Price"/></p>    
             
-            <ShoppingTable products={products}/>
+            <ShoppingTable list={list}/>
             <button className="btn-add">Add a new item</button>
             <div>
                 <input className="view-completed-items" type="button" value="View completed items"/>

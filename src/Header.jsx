@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const activeStyle = {
-  color: "purple",
-};
+// const activeStyle = {
+//   color: "purple",
+// };
 
 export default function Header() {
   return (
@@ -11,7 +11,7 @@ export default function Header() {
         <ul>
           <li>
             <Link to="/">
-              <img alt="logo" src="/images/ikea-logo.svg" />
+              <img alt="logo" src="/assets/images/logo.svg" />
             </Link>
           </li>
         </ul>
