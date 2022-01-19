@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useState } from "react";
+import { useNavigate} from "react-router-dom";
 
 
 const AddItem = ({ addItem }) => {
@@ -7,19 +8,20 @@ const AddItem = ({ addItem }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [error, setError] = useState(undefined);
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name.trim() !== "" && price.trim() !== "") {
-      setName(name);
-      setName("");
-      setPrice(price)
-      setPrice("");
+      setName(name);     
+      setPrice(price);
       inputRef.current.focus();
     } else {
-      alert("Please add your name")
+      alert("Please add your name");
     }
-    addItem({name,price})
-    // window.location.replace("http://localhost:3000/shoppinglist")
+    addItem({name,price});
+    setName("");
+    setPrice("");
+    navigate('/shoppinglist')
   };
 
   return (

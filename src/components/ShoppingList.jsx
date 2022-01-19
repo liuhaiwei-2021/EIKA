@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate} from "react-router-dom";
 import ShoppingTable from './ShoppingTable'
 
-const ShoppingList = ({list,addItem}) => {
-
+const ShoppingList = ({list}) => {
+    const navigate = useNavigate();
+    const handleClick =()=>{
+        navigate('/add')    
+    }
     return (
         <div className="shopping-list">
             <h1>Shopping List</h1> 
@@ -12,7 +16,7 @@ const ShoppingList = ({list,addItem}) => {
                 <input type="button" value="Price"/></p>    
             
             <ShoppingTable list={list}/>
-            <button className="btn-add">Add a new item</button>
+            <button className="btn-add" onClick={() => handleClick()} >Add a new item</button>
             <div>
                 <input className="view-completed-items" type="button" value="View completed items"/>
             </div>

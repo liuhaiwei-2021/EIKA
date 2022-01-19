@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate} from "react-router-dom";
 
 function Welcome() {
- const handleClick =()=>{
-    window.location.replace("http://localhost:3000/add")
- }
+    const navigate = useNavigate();
+    const handleClick =()=>{
+        navigate('/add')    
+    }
     return (
         <div className="welcome">
             <img alt="sketch" src="/assets/images/sketch.png" />
