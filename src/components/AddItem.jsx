@@ -9,20 +9,34 @@ const AddItem = ({ addItem }) => {
   const [price, setPrice] = useState("");
   const [error, setError] = useState(undefined);
   const navigate = useNavigate();
+  // handle submit function
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.trim() !== "" && price.trim() !== "") {
-      setName(name);     
-      setPrice(price);
-      inputRef.current.focus();
+    const nameStr = name.replace(/(^\s*)|(\s*$)/g, '')
+    
+    if (nameStr === '' || nameStr === undefined || nameStr === null) {
+      alert("Please add your name"); 
     } else {
-      alert("Please add your name");
+      setName(nameStr);  
+      console.log(name)   
+      inputRef.current.focus();
+    }
+    const priceStr = price.replace(/(^\s*)|(\s*$)/g, '')
+    if (priceStr === '' || priceStr === undefined || priceStr === null) {
+      alert("Please add your price"); 
+    } else {
+      setPrice(nameStr);     
+      inputRef.current.focus();
     }
     addItem({name,price});
-    setName("");
-    setPrice("");
-    navigate('/shoppinglist')
+    if(name && price){
+      navigate('/shoppinglist');
+    }else{
+      navigate('/add');
+    }
+    
   };
+
 
   return (
     <div className='add-item'>

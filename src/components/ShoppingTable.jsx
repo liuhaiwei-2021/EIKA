@@ -13,7 +13,7 @@ const ShoppingTable = ({list}) => {
                                     <input className="product-desc" type="checkbox"  name={item.name}/>
                                     <label htmlFor="leirvik">{item.name}, {item.price}</label> </td>
                                 <td>
-                                    <img className="product-img"  src={item.img} alt={item.name}/>
+                                    <img className="product-img"  src={item.img} />
                                 </td>
                             </tr>
                         ))}                                           
