@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import AddItem from "./components/AddItem"
 import ShoppingList from "./components/ShoppingList";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate} from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 
@@ -27,6 +27,8 @@ function App() {
     }
  ]);
 
+ const navigate = useNavigate();
+
   // ADD item to list
   const  addItem = ({name,price})=>{
     setList((list)=>{
@@ -47,24 +49,23 @@ function App() {
 
   // componentDidMount
   useEffect(() => {
+    // read localStorage and declare a storedList 
     const storedList= JSON.parse(localStorage.getItem('list'))
-    if (storedList){}
-      setList(storedList)
+    if (storedList){
+      setList(storedList)  
+      // if there is localStorage, go to ShoppingList page
+      navigate('/shoppinglist') 
+    }else{
+      // if there is not localStorage, go to Welcome page
+      navigate('/')
+    }
   }, [])
   
   //wacher list
   useEffect(() => { 
     localStorage.setItem('list', JSON.stringify(list))
-
   }, [list])
-
-  // {
-  //   list.length >0  
-  //     ? window.location.replace("http://localhost:3000/shoppinglist") 
-  //     : window.location.replace("http://localhost:3000")
-  // }
-
-                                        
+                                      
   return (
     <>
     <div className="content">
