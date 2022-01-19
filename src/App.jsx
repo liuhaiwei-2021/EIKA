@@ -38,7 +38,7 @@ function App() {
               id: uuidv4(), 
               name: name, 
               price: price, 
-              completed: false 
+              completed: true 
             },
             ...list,
         ]
@@ -46,6 +46,22 @@ function App() {
     })
   }
  
+  const toggleItemCompleted = (id) => {
+    let newList = list.map((item) => {
+      if (item.id === id) {
+        item.completed = !item.completed;
+        return item;
+      }
+      return item;
+    });
+    setList(newList);
+  };
+
+  const removeItem = (id) => {
+    setList((list) => {
+      return list.filter((item) => item.id !== id);
+    });
+  };
 
   // componentDidMount
   useEffect(() => {
@@ -74,8 +90,7 @@ function App() {
         <Routes>
           <Route path="/" 
                  element={
-                 <Welcome
-                   
+                 <Welcome                   
                   addItem={addItem}
           />}/>
           <Route path="/add" 
@@ -88,6 +103,8 @@ function App() {
                  <ShoppingList 
                  list={list}
                  addItem={addItem}
+                 toggleItemCompleted={toggleItemCompleted}
+                 removeItem={removeItem}
           />}/>
         </Routes>    
       </main>     

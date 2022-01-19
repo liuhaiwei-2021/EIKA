@@ -141,7 +141,11 @@ input.view-completed-items{
     line-height: 100px;
     justify-content: space-around;
 }
-.shopping-table .product-img{
+.item-img{
    width: 100px;
    height: auto;
+}
+.completed {
+    text-decoration: line-through;
+    color: grey;
 }

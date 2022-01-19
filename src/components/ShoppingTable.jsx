@@ -1,22 +1,19 @@
 import React from 'react'
+import ShoppingTableRow from './ShoppingTableRow'
 
-const ShoppingTable = ({list}) => {
+const ShoppingTable = ({list,toggleItemCompleted,removeItem}) => {
     return (
         <div>
             <table className="shopping-table">               
-                <tbody>
-                                     
+                <tbody>                                    
                         { list &&
                             list.map((item)=>(
-                            <tr key={item.id} > 
-                                <td> 
-                                    <input className="product-desc" type="checkbox"  name={item.name}/>
-                                    <label htmlFor="leirvik">{item.name}, {item.price}</label> </td>
-                                <td>
-                                    <img className="product-img"  src={item.img} />
-                                </td>
-                            </tr>
-                        ))}                                           
+                            <ShoppingTableRow 
+                                key={item.id} 
+                                item={item} 
+                                toggleItemCompleted={toggleItemCompleted} 
+                                removeItem={removeItem}/>
+                        ))}                                                             
                  </tbody>
            </table>
         </div>
