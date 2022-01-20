@@ -7,7 +7,7 @@ const AddItem = ({ addItem }) => {
   const inputRef = useRef();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const [error, setError] = useState(undefined);
+
   const navigate = useNavigate();
   // handle submit function
   const handleSubmit = (e) => {
@@ -54,7 +54,6 @@ const AddItem = ({ addItem }) => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}></input>
           <input type='submit' value='ADD'></input>       
-        { <small>{error}</small> }
       </form>
     </div>
   );

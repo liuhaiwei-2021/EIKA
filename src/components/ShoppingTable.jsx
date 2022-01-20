@@ -1,20 +1,13 @@
 import React from 'react'
 import ShoppingTableRow from './ShoppingTableRow'
 
-const ShoppingTable = ({list,toggleItemCompleted,removeItem}) => {
+const ShoppingTable = ({uncompletedList,toggleItemCompleted}) => {
     return (
         <div>
-            <table className="shopping-table">               
-                <tbody>                                    
-                        { list &&
-                            list.map((item)=>(
-                            <ShoppingTableRow 
-                                key={item.id} 
-                                item={item} 
-                                toggleItemCompleted={toggleItemCompleted} 
-                                removeItem={removeItem}/>
-                        ))}                                                             
-                 </tbody>
+            <table className="shopping-table">
+                <tbody>
+                    {uncompletedList && uncompletedList.map((uncompletedItem) => (<ShoppingTableRow key = {uncompletedItem.id} uncompletedItem = {uncompletedItem} toggleItemCompleted = {toggleItemCompleted}/>))}
+                </tbody>
            </table>
         </div>
     )

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import AddItem from "./components/AddItem"
 import ShoppingList from "./components/ShoppingList";
+import ShoppingCompletedList from "./components/ShoppingCompletedList";
 import { Routes, Route, useNavigate} from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
@@ -16,36 +17,46 @@ function App() {
       name: "leirvik", 
       price: 2085, 
       img: "/assets/images/leirvik-säng-2085.png", 
-      completed: true
+      completed: false
     },
     {  
       id: uuidv4(), 
       name: "åskmuller", 
       price: 179, 
       img: "/assets/images/åskmuller-brodslampa-179.png", 
-      completed: false
+      completed: true
     }
  ]);
+
+ const [uncompletedList, setUncompletedList] = useState("")
+ const [completedList, setCompletedList] = useState("")
 
  const navigate = useNavigate();
 
   // ADD item to list
   const  addItem = ({name,price})=>{
     setList((list)=>{
-      if (list){
+      if ({name,price}){
         return [
             { 
               id: uuidv4(), 
               name: name, 
               price: price, 
-              completed: true 
+              completed: false 
             },
-            ...list,
+            ...list
         ]
       }
     })
+    let newUncompletedList = list.filter(item => item.completed === false);
+    setUncompletedList(newUncompletedList);
+    let newCompletedList = list.filter(item => item.completed === true);
+    setCompletedList(newCompletedList);
+
+    localStorage.setItem("list", JSON.stringify(list));
+    localStorage.setItem('uncompletedList', JSON.stringify(uncompletedList))
+    localStorage.setItem('completedList', JSON.stringify(completedList))
   }
- 
   const toggleItemCompleted = (id) => {
     let newList = list.map((item) => {
       if (item.id === id) {
@@ -55,32 +66,43 @@ function App() {
       return item;
     });
     setList(newList);
-  };
 
-  const removeItem = (id) => {
-    setList((list) => {
-      return list.filter((item) => item.id !== id);
-    });
-  };
+    let newUncompletedList = list.filter(item => item.completed === false);
+    setUncompletedList(newUncompletedList);
+    let newCompletedList = list.filter(item => item.completed === true);
+    setCompletedList(newCompletedList);
 
+    localStorage.setItem("list", JSON.stringify(list));
+    localStorage.setItem('uncompletedList', JSON.stringify(uncompletedList))
+    localStorage.setItem('completedList', JSON.stringify(completedList))
+  };
+ 
   // componentDidMount
   useEffect(() => {
     // read localStorage and declare a storedList 
     const storedList= JSON.parse(localStorage.getItem('list'))
     if (storedList){
-      setList(storedList)  
-      // if there is localStorage, go to ShoppingList page
-      navigate('/shoppinglist') 
+      setList(storedList) 
+      const storedUncompletedList = list.filter(item => item.completed === false)
+      setUncompletedList(storedUncompletedList)
+      const storedCompletedList = list.filter(item => item.completed === true)
+      setCompletedList(storedCompletedList)
+      navigate('/shoppinglist')
+      console.log(completedList)
     }else{
       // if there is not localStorage, go to Welcome page
       navigate('/')
-    }
+    } 
   }, [])
   
   //wacher list
   useEffect(() => { 
     localStorage.setItem('list', JSON.stringify(list))
-  }, [list])
+    localStorage.setItem('uncompletedList', JSON.stringify(uncompletedList))
+    localStorage.setItem('completedList', JSON.stringify(completedList))
+  }, [list,uncompletedList,completedList])
+
+  
                                       
   return (
     <>
@@ -88,23 +110,28 @@ function App() {
       <Header />
       <main className="main">
         <Routes>
-          <Route path="/" 
-                 element={
+          <Route path = "/" 
+                 element = {
                  <Welcome                   
-                  addItem={addItem}
+                  addItem = {addItem}
           />}/>
           <Route path="/add" 
-                 element={
+                 element = {
                  <AddItem 
-                  addItem={addItem}
+                  addItem = {addItem}
           />}/>
           <Route path="/shoppinglist" 
-                 element={
+                 element = {
                  <ShoppingList 
-                 list={list}
-                 addItem={addItem}
-                 toggleItemCompleted={toggleItemCompleted}
-                 removeItem={removeItem}
+                  uncompletedList = {uncompletedList}
+                 addItem = {addItem}
+                 toggleItemCompleted = {toggleItemCompleted}
+          />}/>
+          <Route path = "/shoppinglist-completed" 
+                 element = {
+                 <ShoppingCompletedList 
+                 completedList = {completedList}
+                 toggleItemCompleted = {toggleItemCompleted}
           />}/>
         </Routes>    
       </main>     

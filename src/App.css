@@ -128,7 +128,7 @@ form.add-item-form input[type="submit"]{
     border-radius: 30px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-input.view-completed-items{
+.view-completed-items{
     display: inline-block;
     box-shadow: 0 0 0 1000px FFFFFF inset;
     margin-top: 50px;
@@ -148,4 +148,38 @@ input.view-completed-items{
 .completed {
     text-decoration: line-through;
     color: grey;
+}
+/* ShoppingCompletedList component*/
+.shopping-completed-list{
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    align-items: center;   
+}
+.shopping-completed-list h1{
+    font-size: 40px;
+}
+
+/* ShoppingCompletedTable component */
+.shopping-completed-table{
+    display: flexbox;
+    width: 100%;
+    border: none;
+    line-height: 100px;
+    justify-content: space-around;
+}
+.completed-item-img{
+    max-height: 40px;
+}
+.shopping-completed-list input[type="button"]{
+    display: inline-block;
+    box-shadow: 0 0 0 1000px #FFFFFF inset;
+    border-style: none;
+    text-decoration: underline;
+    color: gray;
+}
+.view-completed-items{
+    display: inline-block;
+    box-shadow: 0 0 0 1000px FFFFFF inset;
+    margin-top: 50px;
 }
