@@ -145,7 +145,7 @@ form.add-item-form input[type="submit"]{
    width: 100px;
    height: auto;
 }
-.completed {
+.completed-item{
     text-decoration: line-through;
     color: grey;
 }
