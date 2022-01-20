@@ -23,7 +23,7 @@ function App() {
       id: uuidv4(), 
       name: "åskmuller", 
       price: 179, 
-      img: "/assets/images/åskmuller-brodslampa-179.png", 
+      img: "/assets/images/askmuller-brodslampa-179.png", 
       completed: true
     }
  ]);
