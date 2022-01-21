@@ -2,6 +2,7 @@ import React from 'react'
 import ShoppingTableRow from './ShoppingTableRow'
 
 const ShoppingTable = ({uncompletedList,toggleItemCompleted}) => {
+    console.log(uncompletedList)
     return (
         <div>
             <table className="shopping-table">
