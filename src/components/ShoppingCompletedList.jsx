@@ -9,7 +9,6 @@ const ShoppingCompletedList = ({completedList,toggleItemCompleted}) => {
     }
     return (            
         <div className="shopping-completed-list">
-            <h1>Shopping Completed List</h1> 
             {
                 completedList.length > 0  &&
                 <ShoppingCompletedTable 

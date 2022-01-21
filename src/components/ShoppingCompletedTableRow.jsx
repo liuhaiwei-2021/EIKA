@@ -7,8 +7,11 @@ const ShoppingCompletedTableRow = ({completedItem,toggleItemCompleted}) => {
     }
     return (           
         <tr key={completedItem.id}> 
-            <td><b className="completed-item" onClick={toggle}>{completedItem.name}, {completedItem.price}</b></td>
+
+            <td className="completed-item" onClick={toggle}>{completedItem.name}</td>
+            <td className="completed-item" onClick={toggle}>{completedItem.price}</td>
             <td><img className="completed-item-img"  src={completedItem.img} alt=""/></td>
+
         </tr>            
     )
 }

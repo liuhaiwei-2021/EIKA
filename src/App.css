@@ -145,16 +145,17 @@ table, th, td {
 th, td {
     padding: 15px;
   }
+caption {
+    font-family: NotoSans-Bold;
+    font-size: 40px;
+}
 .shopping-table{
     width: 100%;
     margin: 1em;
     table-layout: auto;
     text-align: center;
 }
-.shopping-table caption{
-    font-family: NotoSans-Bold;
-    font-size: 40px;
-}
+
 .item-img{
    width: 100px;
    height: auto;
