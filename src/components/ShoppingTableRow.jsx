@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ShoppingTableBody = ({uncompletedItem,toggleItemCompleted}) => {
+const ShoppingTableRow = ({uncompletedItem,toggleItemCompleted}) => {
     const toggle = () => {
         toggleItemCompleted(uncompletedItem.id);
     }
@@ -15,4 +15,4 @@ const ShoppingTableBody = ({uncompletedItem,toggleItemCompleted}) => {
     )
 }
 
-export default ShoppingTableBody
+export default ShoppingTableRow

@@ -6,6 +6,7 @@ useEffect
 useRef
 react-router-dom
 uuid
+Font Awesome
 
 
 # Getting Started with Create React App
