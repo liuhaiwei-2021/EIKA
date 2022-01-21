@@ -19,8 +19,7 @@ function Welcome() {
 
             <p>To get started press the Add new item button and a
                 popup will ask you the name and the price of the
-                item you want to add. You can also add an image
-                after the item is added by touching the camera icon</p>
+                item you want to add.</p>
             <button className="btn-add" onClick={() => handleClick()}>Add a new item</button>
 
         </div>
