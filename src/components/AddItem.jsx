@@ -19,9 +19,12 @@ const AddItem = ({addItem }) => {
     if (price === '' || price === undefined || price === null) {
       alert("Please add your price"); 
     }
-    
-    addItem({name,price});
-    navigate('/shoppinglist');  
+    if(name.length > 0 & price.length > 0){
+      addItem({name,price});
+      navigate('/shoppinglist');
+    }else{
+      alert("Check your input"); 
+    }  
   };
 
   return (
