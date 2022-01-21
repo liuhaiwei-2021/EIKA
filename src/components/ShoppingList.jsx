@@ -10,14 +10,9 @@ const ShoppingList = ({toggleItemCompleted,uncompletedList}) => {
     const handleClickCompleted = () =>{ 
         navigate('/shoppinglist-completed');   
     }
+    
     return (
         <div className="shopping-list">
-            {/* <h1>Shopping List</h1> 
-            <p> 
-                Sort by:  
-                <input type="button" value="Name"/>
-                <input type="button" value="Price"/></p>     */}
-            
             <ShoppingTable toggleItemCompleted={toggleItemCompleted}  uncompletedList={uncompletedList}/>
             
             {/* if there is not uncompletedList, remind custom to check completed list */}
