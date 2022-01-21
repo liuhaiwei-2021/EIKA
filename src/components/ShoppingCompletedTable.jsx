@@ -1,5 +1,5 @@
 import React from 'react'
-import ShoppingCompletedTableBody from './ShoppingCompletedTableBody'
+import ShoppingCompletedTableRow from './ShoppingCompletedTableRow'
 
 function ShoppingCompletedTable({completedList, toggleItemCompleted}) {
     return (
@@ -13,14 +13,16 @@ function ShoppingCompletedTable({completedList, toggleItemCompleted}) {
                         <th>Image</th>
                     </tr>
                 </thead>
-                { completedList.length > 0  &&
-                    completedList.map((completedItem) => (
-                       <ShoppingCompletedTableBody
-                        key = {completedItem.id} 
-                        completedItem = {completedItem} 
-                        toggleItemCompleted = {toggleItemCompleted} 
-                    />
-                ))}
+                <tbody>
+                    { completedList.length > 0  &&
+                        completedList.map((completedItem) => (
+                        <ShoppingCompletedTableRow
+                            key = {completedItem.id} 
+                            completedItem = {completedItem} 
+                            toggleItemCompleted = {toggleItemCompleted} 
+                        />
+                    ))}
+                </tbody>
            </table>
         </div>
     )

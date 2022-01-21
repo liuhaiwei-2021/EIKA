@@ -1,19 +1,17 @@
 import React from 'react'
 
-const ShoppingCompletedTableBody = ({completedItem,toggleItemCompleted}) => {
+const ShoppingCompletedTableRow = ({completedItem,toggleItemCompleted}) => {
     if(completedItem === undefined) {return null}
     const toggle = () => {
         toggleItemCompleted(completedItem.id)
     }
-    return (    
-        <tbody key={completedItem.id}>      
-            <tr> 
+    return (           
+            <tr key={completedItem.id}> 
                <td className="completed-item" onClick={toggle}>{completedItem.name}</td>
                <td className="completed-item" onClick={toggle}>{completedItem.price}</td>
                <td><img className="completed-item-img"  src={completedItem.img} alt=""/></td>
-            </tr>  
-        </tbody>          
+            </tr>          
     )
 }
 
-export default ShoppingCompletedTableBody
+export default ShoppingCompletedTableRow
