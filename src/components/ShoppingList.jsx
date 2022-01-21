@@ -25,7 +25,7 @@ const ShoppingList = ({toggleItemCompleted,uncompletedList}) => {
                 <p className='todo-item text-center'>No uncompleted list left! Check your completed list!</p>              
             )}
 
-            <button className="btn-add" onClick={() => handleClickAdd()} >Add a new item</button>
+            <button className="btn-add" onClick={() => handleClickAdd()}>Add a new item</button>
             <div>
                 <input className="view-completed-items" onClick={() => handleClickCompleted()} type="button" value="View completed items"/>
             </div>

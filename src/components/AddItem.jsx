@@ -39,7 +39,7 @@ const AddItem = ({addItem }) => {
             ref={inputRef}
             value={price}
             onChange={(e) => setPrice(e.target.value)}></input>
-          <input type='submit' value='ADD'></input>       
+          <input className="btn-add" type='submit' value='ADD'></input>       
       </form>
     </div>
   );
