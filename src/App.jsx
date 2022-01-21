@@ -8,10 +8,10 @@ import ShoppingCompletedList from "./components/ShoppingCompletedList";
 import { Routes, Route, useNavigate} from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
-
 function App() {
   // use useState to manage Local state
-  const [list, setList] =  useState("")
+  const [list, setList] =  useState("");
+  // important test data 
     // [{  
     //   id: uuidv4(), 
     //   name: "leirvik", 
@@ -28,8 +28,8 @@ function App() {
     // }]
 
 
-  const [uncompletedList, setUncompletedList] = useState("")
-  const [completedList, setCompletedList] = useState("")
+  const [uncompletedList, setUncompletedList] = useState("");
+  const [completedList, setCompletedList] = useState("");
   // declare navigate
   const navigate = useNavigate();
  
@@ -39,31 +39,25 @@ function App() {
 
         // read localStorage 
       let storedList= JSON.parse(localStorage.getItem('list'))
-      let storedUncompletedList = JSON.parse(localStorage.getItem('uncompletedList'))
-      let storedCompletedList = JSON.parse(localStorage.getItem('completedList'))
+      let storedUncompletedList = JSON.parse(localStorage.getItem('uncompletedList'));
+      let storedCompletedList = JSON.parse(localStorage.getItem('completedList'));
 
       storedList &&  setList(storedList) 
       storedUncompletedList &&  setUncompletedList(storedUncompletedList)
       storedCompletedList &&  setCompletedList(storedCompletedList)
-
-      if(storedUncompletedList.length > 0){
-        navigate('/shoppinglist')
-       }else{
-        navigate('/') 
-       }    
+      
+      // according to localdata go to different page
+      storedUncompletedList.length > 0 ?  navigate('/shoppinglist') : navigate('/');    
     };
 
     loadLocaldata();
-     
-     // according to localdata go to different page
-  
   }, [])
   
   //wacher list
   useEffect(() => {
-    localStorage.setItem('list', JSON.stringify(list))
-    localStorage.setItem('uncompletedList', JSON.stringify(uncompletedList))
-    localStorage.setItem('completedList', JSON.stringify(completedList))
+    localStorage.setItem('list', JSON.stringify(list));
+    localStorage.setItem('uncompletedList', JSON.stringify(uncompletedList));
+    localStorage.setItem('completedList', JSON.stringify(completedList));
   }, [list,uncompletedList,completedList])
 
   // ADD new item to list
@@ -103,6 +97,7 @@ function App() {
       }      
     });
     setList(newList);
+
     // change uncompletedList and completedList as one of item's completed has changed
     let newUncompletedList = list.filter(item => item.completed === false);
     setUncompletedList(newUncompletedList);

@@ -1,15 +1,14 @@
 import React from 'react';
 import { useNavigate} from "react-router-dom";
-import ReactTable from 'react-table'
 import ShoppingTable from './ShoppingTable'
 
 const ShoppingList = ({toggleItemCompleted,uncompletedList}) => {
     const navigate = useNavigate();
     const handleClickAdd = () => {
-        navigate('/add')    
+        navigate('/add');    
     }
     const handleClickCompleted = () =>{ 
-        navigate('/shoppinglist-completed')    
+        navigate('/shoppinglist-completed');   
     }
     return (
         <div className="shopping-list">

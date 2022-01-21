@@ -12,12 +12,14 @@ const AddItem = ({addItem }) => {
   // handle submit function
   const handleSubmit = (e) => {
     e.preventDefault(); 
+
     if (name === '' || name === undefined || name === null) {
       alert("Please add your name"); 
     } 
     if (price === '' || price === undefined || price === null) {
       alert("Please add your price"); 
     }
+    
     addItem({name,price});
     navigate('/shoppinglist');  
   };
