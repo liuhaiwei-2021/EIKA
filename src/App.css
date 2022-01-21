@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'NotoSans-Bold'; 
+    src: url('../public/assets/fonts/Noto_Sans/NotoSans-Bold.ttf')
+}
+@font-face {
+    font-family: 'NotoSans-Regular'; 
+    src: url('../public/assets/fonts/Noto_Sans/NotoSans-Regular.ttf')
+}
+
+* {
+    font-family: NotoSans-Regular;
+    font-size: 14px;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #FFFFFF;
+    margin: 0;
+}
+
+/* content */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/* Header */
+.header {
+    height: 60px;
+    /* margin-top: 10px; */
+    grid-column: 2/3;   
+}
+.header ul{
+    list-style-type: none;
+} 
+.header img {
+    max-height: 40px;
+}
+/* main */
+.main{
+    grid-column: 2/3;
+}
+/* Welcome component */
+.welcome{
+    margin: 14px;
+    text-align: center;
+}
+.welcome img{
+    height: 200px;
+    width: auto;
+}
+.welcome h1{
+    font-size: 40px;
+}
+
+.btn-add{
+      display: inline-block;
+      width: 200px;
+      background-color:#0058AB;
+      color: #FFFFFF;
+      margin-top: 20px;
+      padding: 20px 20px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/* AddItem component */
+.add-item{
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px;  
+}
+form.add-item-form input[type="text"],input[type="number"]{
+    display: block;
+    margin: 40px;
+    padding: 20px 20px;
+    height: 40px;
+    width: 100%;
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;  
+}
+form.add-item-form input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+/* ShopingList componenent */
+.shopping-list{
+    display: flexbox;
+    margin: 1em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;   
+}
+.shopping-list input[type="button"]{
+    display: inline-block;
+    box-shadow: 0 0 0 1000px #FFFFFF inset;
+    border-style: none;
+    text-decoration: underline;
+    color: gray;
+}
+.shopping-list input:hover{
+    color: black;
+}
+
+.view-completed-items{
+    display: inline-block;
+    box-shadow: 0 0 0 1000px FFFFFF inset;
+    margin-top: 50px;
+}
+/* shopping table component */
+table, th, td {
+    border: none;
+    border-collapse: collapse;
+  }
+th, td {
+    padding: 10px;
+  }
+caption {
+    font-family: NotoSans-Bold;
+    font-size: 40px;
+}
+.shopping-table{
+    width: 100%;
+    margin: 1em;
+    table-layout: auto;
+    text-align: center;
+}
+
+.item-img{
+   width: 100px;
+   height: auto;
+}
+.completed-item{
+    text-decoration: line-through;
+    color: grey;
+}
+/* ShoppingCompletedList component*/
+.shopping-completed-list{
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    align-items: center;   
+}
+.shopping-completed-list h1{
+    font-size: 40px;
+}
+
+/* ShoppingCompletedTable component */
+.shopping-completed-table{
+    display: flexbox;
+    width: 100%;
+    border: none;
+    line-height: 30px;
+    justify-content: space-around;
+}
+.completed-item-img{
+    max-height: 40px;
+}
+.shopping-completed-list input[type="button"]{
+    display: inline-block;
+    box-shadow: 0 0 0 1000px #FFFFFF inset;
+    border-style: none;
+    text-decoration: underline;
+    color: gray;
+}
+.view-completed-items{
+    display: inline-block;
+    box-shadow: 0 0 0 1000px FFFFFF inset;
+    margin-top: 50px;
+}
