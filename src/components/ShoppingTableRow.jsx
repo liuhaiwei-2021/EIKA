@@ -5,7 +5,11 @@ const ShoppingTableRow = ({uncompletedItem,toggleItemCompleted}) => {
         toggleItemCompleted(uncompletedItem.id);
     }
     return (
-        <tr key={uncompletedItem.id}><td><input className="item-desc" onClick={toggle}  defaultChecked = {uncompletedItem.completed ?  "checked" : ""}  id="item-desc" type="checkbox"/><label className={uncompletedItem.completed ? "completed" : ""} onClick={toggle} htmlFor="item-desc">{uncompletedItem.name},{uncompletedItem.price}</label></td><td><img className="item-img"  src={uncompletedItem.img} alt=""/></td></tr>
+        <tr key={uncompletedItem.id}>
+            <td><input className="item-name" onClick={toggle}  defaultChecked = {uncompletedItem.completed ?  "checked" : ""}  id="item-name" type="checkbox"/><label className={uncompletedItem.completed ? "completed" : ""}  htmlFor="item-name">{uncompletedItem.name}</label></td>
+            <td className="item-price" onClick={toggle} className={uncompletedItem.completed ? "completed" : ""}>{uncompletedItem.price}</td>
+            <td><i className="fas fa-camera"></i></td>
+        </tr>
     )
 }
 
