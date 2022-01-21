@@ -34,7 +34,7 @@ const AddItem = ({addItem }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}></input>
             <input
-            type='text'
+            type='number'
             placeholder='Please add your price'
             ref={inputRef}
             value={price}

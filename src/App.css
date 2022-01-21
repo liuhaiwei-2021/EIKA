@@ -73,7 +73,7 @@ html, body {
     align-items: center; 
     margin-top: 20px;  
 }
-form.add-item-form input[type="text"]{
+form.add-item-form input[type="text"],input[type="number"]{
     display: block;
     margin: 40px;
     padding: 20px 20px;
