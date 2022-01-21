@@ -1,3 +1,13 @@
+# Description
+In this project I use:
+
+useState
+useEffect
+useRef
+react-router-dom
+uuid
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
