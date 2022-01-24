@@ -1,20 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import ErrorBoundary from './ErrorBoundary';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import ErrorBoundary from "./ErrorBoundary";
 import { BrowserRouter } from "react-router-dom";
 
-
+// Formatting -1
+// This can be easily fix with 1 plugin called Prettier.
 ReactDOM.render(
   <ErrorBoundary>
-    
     <BrowserRouter>
       <App />
     </BrowserRouter>
-    
-    
   </ErrorBoundary>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-
