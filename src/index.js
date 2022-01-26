@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import ErrorBoundary from './ErrorBoundary';
 import { BrowserRouter } from "react-router-dom";
+import ThemeContextProvider from "./context/ThemeContext";
 
 
 ReactDOM.render(
   <ErrorBoundary>
     
     <BrowserRouter>
-      <App />
+      <ThemeContextProvider>
+        <App />
+      </ThemeContextProvider>
     </BrowserRouter>
     
     

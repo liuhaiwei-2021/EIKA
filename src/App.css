@@ -92,21 +92,22 @@ form.add-item-form input:focus{
 }
 
 /* ShopingList componenent */
-.shopping-list{
-    display: flexbox;
+.list{
+    display: flex;
+    flex-direction: column;
     margin: 1em;
     text-align: center;
     justify-content: center;
     align-items: center;   
 }
-.shopping-list input[type="button"]{
+.list .view-uncompleted-items{
     display: inline-block;
     box-shadow: 0 0 0 1000px #FFFFFF inset;
     border-style: none;
     text-decoration: underline;
     color: gray;
 }
-.shopping-list input:hover{
+.list input:hover{
     color: black;
 }
 
@@ -116,18 +117,14 @@ form.add-item-form input:focus{
     margin-top: 50px;
 }
 /* shopping table component */
-table, th, td {
+.list table, th, td {
     border: none;
     border-collapse: collapse;
   }
 th, td {
     padding: 10px;
   }
-caption {
-    font-family: NotoSans-Bold;
-    font-size: 40px;
-}
-.shopping-table{
+.table{
     width: 100%;
     margin: 1em;
     table-layout: auto;
@@ -138,41 +135,11 @@ caption {
    width: 100px;
    height: auto;
 }
-.completed-item{
+.completed{
     text-decoration: line-through;
     color: grey;
 }
-/* ShoppingCompletedList component*/
-.shopping-completed-list{
-    display: flexbox;
-    text-align: center;
-    justify-content: center;
-    align-items: center;   
-}
-.shopping-completed-list h1{
-    font-size: 40px;
-}
-
-/* ShoppingCompletedTable component */
-.shopping-completed-table{
-    display: flexbox;
-    width: 100%;
-    border: none;
-    line-height: 30px;
-    justify-content: space-around;
-}
-.completed-item-img{
-    max-height: 40px;
-}
-.shopping-completed-list input[type="button"]{
-    display: inline-block;
-    box-shadow: 0 0 0 1000px #FFFFFF inset;
-    border-style: none;
-    text-decoration: underline;
-    color: gray;
-}
-.view-completed-items{
-    display: inline-block;
-    box-shadow: 0 0 0 1000px FFFFFF inset;
+.view{
     margin-top: 50px;
+    margin-bottom: 50px;
 }

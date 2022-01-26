@@ -4,11 +4,13 @@ import Header from "./components/Header";
 import Welcome from "./components/Welcome";
 import AddItem from "./components/AddItem"
 import ShoppingList from "./components/ShoppingList";
-import ShoppingCompletedList from "./components/ShoppingCompletedList";
 import { Routes, Route, useNavigate} from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
+
 function App() {
+
+
   // use useState to manage Local state
   const [list, setList] =  useState("");
   // important test data 
@@ -47,7 +49,7 @@ function App() {
       storedCompletedList &&  setCompletedList(storedCompletedList)
       
       // according to localdata go to different page
-      storedUncompletedList.length > 0 ?  navigate('/shoppinglist') : navigate('/');    
+      storedUncompletedList ?  navigate('/shoppinglist') : navigate('/');    
     };
 
     loadLocaldata();
@@ -121,15 +123,10 @@ function App() {
           <Route path="/shoppinglist" 
                  element = {
                  <ShoppingList 
-                  uncompletedList = {uncompletedList}
+                 completedList = {completedList}
+                 uncompletedList = {uncompletedList}
                   addItem = {addItem}
                   toggleItemCompleted = {toggleItemCompleted}
-          />}/>
-          <Route path = "/shoppinglist-completed" 
-                 element = {
-                 <ShoppingCompletedList 
-                 completedList = {completedList}
-                 toggleItemCompleted = {toggleItemCompleted}
           />}/>
         </Routes>    
       </main>     

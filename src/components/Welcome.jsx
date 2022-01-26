@@ -20,7 +20,7 @@ function Welcome() {
             <p>To get started press the Add new item button and a
                 popup will ask you the name and the price of the
                 item you want to add.</p>
-            <button className="btn-add" onClick={() => handleClick()}>Add a new item</button>
+            <button className="btn-add" onClick={ handleClick}>Add a new item</button>
 
         </div>
     )
