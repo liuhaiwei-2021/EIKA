@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # Description
 In this project I use:
 
