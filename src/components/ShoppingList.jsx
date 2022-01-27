@@ -14,6 +14,7 @@ const ShoppingList = ({completedList,uncompletedList,toggleItemCompleted}) => {
     return (            
         <div className="list">
             <h1>Shopping List</h1>
+            
             <div className="uncompleted-table">
              {
                 uncompletedList.length > 0  &&
@@ -22,11 +23,13 @@ const ShoppingList = ({completedList,uncompletedList,toggleItemCompleted}) => {
                 toggleItemCompleted = {toggleItemCompleted}/>
             }
             </div>
+
             <input className="btn-add" onClick={handleClick} type='button' value='Add a new item'></input>  
 
             <div className="view">
                 <input className="view-uncompleted-items" onClick={toggleHide} type="button" value="View completed items"/>
             </div>
+
             <div className="completed-table" style={{ display: theme.show }}>
             {
                 completedList.length > 0  &&
@@ -35,6 +38,7 @@ const ShoppingList = ({completedList,uncompletedList,toggleItemCompleted}) => {
                 toggleItemCompleted = {toggleItemCompleted}/>
             }          
             </div>
+
             { 
                 !uncompletedList.length && (   
                 <p className='todo-item text-center'>No uncompleted list! Check your completed list!</p>              

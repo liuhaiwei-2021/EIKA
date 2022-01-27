@@ -124,6 +124,9 @@ form.add-item-form input:focus{
     table-layout: auto;
     text-align: center;
 }
+.completed-table, .uncompleted-table{
+    width: 100%;
+}
 .list table, th, td {
     border: none;
     border-collapse: collapse;
@@ -137,6 +140,7 @@ form.add-item-form input:focus{
     text-decoration: line-through;
     color: grey;
 }
+/* fix background color problem */
 .view{
     margin-top: 50px;
     margin-bottom: 50px;
