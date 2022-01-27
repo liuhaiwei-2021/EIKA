@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { useNavigate} from "react-router-dom";
 
 
-const AddItem = ({addItem }) => {
+const AddItem = ({ addItem }) => {
   const inputRef = useRef();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
