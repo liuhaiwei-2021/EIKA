@@ -10,20 +10,21 @@ const AddItem = ({ addItem }) => {
   const navigate = useNavigate();
   
   // handle submit function
-  const handleSubmit = (e) => {
+  const handleSubmit = (e,form) => {
     e.preventDefault(); 
 
     if (name === '' || name === undefined || name === null) {
-      alert("Please add your name"); 
-    } 
-    if (price === '' || price === undefined || price === null) {
-      alert("Please add your price"); 
-    }
-    if(name.length > 0 & price.length > 0){
-      addItem({name,price});
-      navigate('/shoppinglist');
-    }else{
-      alert("Check your input"); 
+      alert("Please add your name");
+      return false;
+    } else if (price === '' || price === undefined || price === null) {
+      alert("Please add your price");
+      return false;
+    }else if (price <= 0){ 
+      alert("Price should be a postive number")
+      return false;
+    } else {
+        addItem({name,price});
+        navigate('/shoppinglist');    
     }  
   };
 
