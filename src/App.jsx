@@ -12,7 +12,7 @@ function App() {
 
 
   // use useState to manage Local state
-  const [list, setList] =  useState("");
+  const [list, setList] =  useState([]);
   // important test data 
     // [{  
     //   id: uuidv4(), 
@@ -30,8 +30,8 @@ function App() {
     // }]
 
 
-  const [uncompletedList, setUncompletedList] = useState("");
-  const [completedList, setCompletedList] = useState("");
+  const [uncompletedList, setUncompletedList] = useState([]);
+  const [completedList, setCompletedList] = useState([]);
   // declare navigate
   const navigate = useNavigate();
  
